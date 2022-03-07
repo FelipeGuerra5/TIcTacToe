@@ -1,10 +1,10 @@
 import './App.css';
-import 
+import TicTacToe from './TicTacToe/TicTacToe';
 
 function App() {
   return (
     <div className="App">
-      <ticTacToe />
+      <TicTacToe />
     </div>
   );
 }

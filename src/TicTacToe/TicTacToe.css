@@ -1,0 +1,24 @@
+table td {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+table {
+    align-items: bottom;
+    width: 350px;
+    height: 350px;
+
+}
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin-top: 100px;
+}
+
+h1 {
+    justify-content: center;
+}
