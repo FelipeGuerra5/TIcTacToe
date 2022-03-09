@@ -8,7 +8,6 @@ table {
     align-items: bottom;
     width: 350px;
     height: 350px;
-
 }
 .container {
     justify-content: center;
@@ -16,7 +15,7 @@ table {
     display: flex;
     flex-direction: column;
     place-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 h1 {
