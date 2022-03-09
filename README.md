@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-This project is made with ReactJS using Hooks for Learnning purpose, following a tutorial by: <a href='https://www.youtube.com/channel/UCR4NsaYoCjkxwGT5vR16YhA'>Learn Code By Doing</a>
+This project is made with ReactJS using Hooks for learning purpose, following a tutorial by: <a href='https://www.youtube.com/channel/UCR4NsaYoCjkxwGT5vR16YhA'>Learn Code By Doing</a>
 
 ## Code
 
@@ -18,6 +18,6 @@ Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in You
 
 ## Branches
 
-Because it was made with learnning purpose the 'myTurn' branch is almost an exact copy of the App, however it was done without looking at the original.
+Because it was made with learning purpose the 'myTurn' branch is almost an exact copy of the App, however it was done without looking at the original.
 
 
