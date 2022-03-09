@@ -4,14 +4,14 @@ This project is made with ReactJS using Hooks for Learnning purpose, following a
 
 ## Code
 
-- The <a href='https://github.com/FelipeGuerra5/TIcTacToe/blob/b009b1c40f94e69e4a45ff9f4b64f90a87bd07f3/src/TicTacToe/TicTacToe.jsx'>TicTacToe.jsx</a>file with the Script.
+- The <a href='https://github.com/FelipeGuerra5/TIcTacToe/blob/b009b1c40f94e69e4a45ff9f4b64f90a87bd07f3/src/TicTacToe/TicTacToe.jsx'>TicTacToe.jsx</a> file with the Script.
 - The <a href='https://github.com/FelipeGuerra5/TIcTacToe/blob/b009b1c40f94e69e4a45ff9f4b64f90a87bd07f3/src/TicTacToe/TicTacToe.jsx'>TicTacToe.css</a> file wit the StyleSheet
 
 ## Run it
 
 With all the files cloned to your Directory open the Bash terminal and type in:
 
-`cd Directory` 
+`cd Directory`<br>
 `npm start`
 
 Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in Your browser
