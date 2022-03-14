@@ -7,6 +7,7 @@ const TicTacToe = () => {
 	const [turn, setTurn] = useState('X')
 	const [cells, setCells] = useState(Array(9).fill(null))
 	const [winner, setWinner] = useState(null)
+	const [draw, setDraw] = useState(false)
 	
 
 	const checkForWinner = (squares) => {
@@ -46,7 +47,33 @@ const TicTacToe = () => {
 			})
 		}}
 
-
+	
+	const checkoutDraw = (squares) => {
+		// let all = [Array(9).fill(null)]
+		let all = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+		for (const item in all) {
+			if (squares[item] !== null) {
+				console.log(squares[item])
+				all[item] = 1
+				console.log(all)
+			}
+		}
+		let count = 0
+		all.forEach((item) => {
+			if (item === 1) {
+				count += item
+				console.log(count)
+			}
+		})
+		if (turn === 'X') {
+			setTurn('O')
+		} else {
+			setTurn('X')
+		}
+		if (count === 9) {
+			setDraw(true)
+		}
+	}
 	const handleClick = (num) => {
 		let squares = [...cells]
 
@@ -68,13 +95,14 @@ const TicTacToe = () => {
 			setTurn('X')
 		}
 		checkForWinner(squares)
+		checkoutDraw(squares)
 		setCells(squares)
 	}
 
 	const handlePlayAgaing = () => {
 		setWinner(null)
 		setCells(Array(9).fill(null))
-		setTurn(winner)
+		winner ? setTurn(winner) : setTurn(turn)
 	}
 
 	
@@ -107,7 +135,16 @@ const TicTacToe = () => {
 					</tr>
 				</tbody>
 			</table>
+
 			
+			{draw ? 
+			<>
+			<p>It Was A Draw, click on Play Againg</p>
+			<button onClick={() => handlePlayAgaing()} >Play Again</button>
+			</> :
+			''
+			}
+
 			{winner ? 
 			<>
 			<p>Winner: {winner}</p>
