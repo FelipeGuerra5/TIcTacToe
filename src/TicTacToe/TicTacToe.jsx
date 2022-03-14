@@ -111,8 +111,16 @@ const TicTacToe = () => {
 		checkScore(winner)
 		setWinner(null)
 		setDraw(false)
+	
 		setCells(Array(9).fill(null))
 		winner ? setTurn(winner) : setTurn(turn)
+	}
+
+	const handleResetScore = () => {
+		setWinner(null)
+		setScore({'X': 0, 'O': 0})
+		setTurn('X')
+		setCells(Array(9).fill(null))
 	}
 
 	
@@ -164,18 +172,20 @@ const TicTacToe = () => {
 
 			
 			{draw ? 
-			<>
-			<p>It Was A Draw, click on Play Againg</p>
-			<button onClick={() => handlePlayAgaing()} >Play Again</button>
-			</> :
+			<div className="buttons">
+				<p>It Was A Draw, click on Play Againg</p>
+				<button onClick={() => handlePlayAgaing()} >Play Again</button>
+				<button onClick={() => handleResetScore()} >Reset Score</button>
+			</div> :
 			''
 			}
 
 			{winner ? 
-			<>
-			<p>Winner: {winner}</p>
-			<button onClick={() => handlePlayAgaing()} >Play Again</button>
-			</> :
+			<div className="buttons">
+				<p>Winner: {winner}</p>
+				<button onClick={() => handlePlayAgaing()} >Play Again</button>
+				<button onClick={() => handleResetScore()} >Reset Score</button>
+			</div> :
 			''
 			}
 

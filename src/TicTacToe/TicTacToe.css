@@ -37,3 +37,9 @@ table {
 h1 {
     justify-content: center;
 }
+.buttons {
+    flex-direction: row;
+}
+button {
+    margin: 0px 15px;
+}
