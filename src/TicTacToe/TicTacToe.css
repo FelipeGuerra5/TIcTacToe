@@ -9,6 +9,22 @@ table {
     width: 350px;
     height: 350px;
 }
+
+#score {
+    border: false;
+    align-items: bottom;
+    width: 350px;
+    height: 25px;
+}
+
+.scoretd {
+    border: 0;
+    width: 175px;
+    height: 60px;
+    justify-content: center;
+    align-items:flex-start;
+}
+
 .container {
     justify-content: center;
     align-items: center;

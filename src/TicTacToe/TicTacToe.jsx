@@ -8,6 +8,7 @@ const TicTacToe = () => {
 	const [cells, setCells] = useState(Array(9).fill(null))
 	const [winner, setWinner] = useState(null)
 	const [draw, setDraw] = useState(false)
+	const [score, setScore] = useState({'X': 0, 'O': 0})
 	
 
 	const checkForWinner = (squares) => {
@@ -43,39 +44,39 @@ const TicTacToe = () => {
 					squares[pattern[1]] === squares[pattern[2]]
 				) {
 					setWinner(squares[pattern[0]])
-				}
+					}
 			})
 		}}
 
-	
-	const checkoutDraw = (squares) => {
-		// let all = [Array(9).fill(null)]
-		let all = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-		for (const item in all) {
-			if (squares[item] !== null) {
-				console.log(squares[item])
-				all[item] = 1
-				console.log(all)
+		const checkoutDraw = (squares) => {
+			// let all = [Array(9).fill(null)]
+			let all = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+			for (const item in all) {
+				if (squares[item] !== null) {
+					all[item] = 1
+				}
+			}
+			let count = 0
+			all.forEach((item) => {
+				if (item === 1) {
+					count += item
+					
+				}
+			})
+			if (turn === 'X') {
+				setTurn('O')
+			} else {
+				setTurn('X')
+			}
+			if (count === 9) {
+				setDraw(true)
 			}
 		}
-		let count = 0
-		all.forEach((item) => {
-			if (item === 1) {
-				count += item
-				console.log(count)
-			}
-		})
-		if (turn === 'X') {
-			setTurn('O')
-		} else {
-			setTurn('X')
-		}
-		if (count === 9) {
-			setDraw(true)
-		}
-	}
-	const handleClick = (num) => {
-		let squares = [...cells]
+		
+
+
+		const handleClick = (num) => {
+			let squares = [...cells]
 
 		if (winner !== null) {
 			alert(`The Winner is: ${winner}\nClick to Play Againg!`)
@@ -99,8 +100,17 @@ const TicTacToe = () => {
 		setCells(squares)
 	}
 
+	const checkScore = (winner) => {
+		let s = score
+		s[winner] += 1
+		setScore(s)
+		console.log(score)
+	}
+
 	const handlePlayAgaing = () => {
+		checkScore(winner)
 		setWinner(null)
+		setDraw(false)
 		setCells(Array(9).fill(null))
 		winner ? setTurn(winner) : setTurn(turn)
 	}
@@ -116,6 +126,22 @@ const TicTacToe = () => {
 		<div className="container">
 			<h1>Tic Tac Toe</h1>
 			<p>Player: "{turn}"</p>
+
+			{score['O'] > 0 || score['X'] > 0 ? 
+			<> 
+			<table id='score'>
+				<tr>
+					<td className="scoretd">
+						Player X: {score['X']}
+					</td>
+					<td className="scoretd">
+						Player O: {score['O']}
+					</td>
+				</tr>
+			</table>
+			</> : ''
+			} 
+
 			<table>
 				<tbody>
 					<tr>
